@@ -17,7 +17,7 @@ BuildRequires: pkgconfig(libelf)
 BuildRequires: cmake
 BuildRequires: pkg-config
 Source0:       %{name}-%{version}.tar.gz
-
+ExclusiveArch: %{x86_64} %{arm64} %{arm32} %{ix86}'
 
 %description
 the bionic linker under bionic_translation/linker/ is taken from https://github.com/Cloudef/android2gnulinux and partly modified for our purposes
@@ -40,4 +40,4 @@ and things break when it's not linked in and android libs try to call into it an
 %files
 %exclude %{_libdir}/lib*.so
 %{_libdir}/lib*.so.*
-%{_sharedir}/%{name}/cfg.d/%{name}.cfg
+%{_datadir}/%{name}/cfg.d/%{name}.cfg
